@@ -1,0 +1,133 @@
+*, 
+li, 
+ul {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+label,
+input[type=radio],
+button {
+  cursor: pointer;
+}
+
+.cells-header.hide {
+  display: none;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: -webkit-linear-gradient(45deg, rgb(255, 255, 255), rgb(119, 221, 119));
+  background: -moz-linear-gradient(45deg, rgb(255, 255, 255), rgb(119, 221, 119));
+  background: linear-gradient(45deg, rgb(255, 255, 255), rgb(119, 221, 119));
+}
+
+.cells {
+  display: none;
+}
+
+.cells_active {
+  display: grid;
+  grid-template-columns: repeat(3, 60px);
+}
+
+.cells-header {
+  border: 1px solid #77DD77;
+  border-radius: 10px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  height: 80%;
+}
+
+.cells__title {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.cells-header__bg {
+  height: 70%;
+  margin-bottom: 30px;
+  pointer-events: none;
+}
+
+.cell {
+  cursor: pointer;
+  width: 60px;
+  height: 60px;
+  border: 1px solid #000;
+}
+
+.cell.round {
+  position: relative;
+}
+
+.cell.round::before {
+  content: 'o';
+  position: absolute;
+  font-size: 30px;
+  color: #000;
+  left: 50%;
+  top: 50%;
+  text-align: center;
+  align-content: center;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-color: #77DD77;
+}
+
+.cell.cross {
+  position: relative;
+}
+
+.cells__type {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  width: 40%;
+  text-transform: uppercase;
+}
+
+.cells__type-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.cell.cross::before {
+  content: 'x';
+  position: absolute;
+  font-size: 30px;
+  color: #fff;
+  left: 50%;
+  top: 50%;
+  text-align: center;
+  align-content: center;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background-color: red;
+}
+
+.btn {
+  border-radius: 10px;
+  background-color: #fff;
+  transition: all .3s;
+  border: 1px solid #77DD77;
+  padding: 10px 0;
+  text-transform: uppercase;
+}
+
+.btn:hover {
+  background-color: #77DD77;
+  color: #fff;
+}

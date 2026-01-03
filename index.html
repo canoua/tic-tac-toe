@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Крестики-нолики</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form action="" class="cells-header">
+        <h1 class="cells__title">Чей ход?</h1>
+        <img class="cells-header__bg" src="1.jpg" alt="bg" />
+        <div class="cells__type-wrapper">
+          <div class="cells__type">
+            <label for="round">Нолики</label>
+            <input name="change" id="round" type="radio" checked />
+          </div>
+          <div class="cells__type">
+            <label for="cross">Крестики</label>
+            <input name="change" id="cross" type="radio" />
+          </div>
+        </div>
+
+        <button class="btn" type="submit" id="cells-header__btn">играть</button>
+      </form>
+
+      <div class="cells">
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+        <div class="cell"></div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
