@@ -5,6 +5,9 @@ const btn = document.getElementById('cells-header__btn');
 let clickCounter = 0;
 let checkedClick = false;
 
+// let selectedColor = document.querySelector('input[name="color"]:checked');
+// input[name="color"]: Выбирает все input элементы с атрибутом name="color"
+
 
 cells.forEach(function(item) {
   item.addEventListener('click', function(e) {
