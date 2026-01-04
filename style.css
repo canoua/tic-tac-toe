@@ -28,10 +28,7 @@ button {
 }
 
 .cells {
-  display: none;
-}
-
-.cells_active {
+  margin-bottom: 30px;
   display: grid;
   grid-template-columns: repeat(3, 60px);
 }
@@ -43,7 +40,7 @@ button {
   display: flex;
   flex-direction: column;
   background-color: #fff;
-  height: 80%;
+  width: 350px;
 }
 
 .cells__title {
@@ -127,7 +124,24 @@ button {
   text-transform: uppercase;
 }
 
+.btn-reset {
+  border-radius: 10px;
+  background-color: #fff;
+  transition: all .3s;
+  border: 1px solid #e31313;
+  padding: 10px;
+  text-transform: uppercase;
+}
+
 .btn:hover {
   background-color: #77DD77;
   color: #fff;
+}
+
+.screen-2 {
+  display: none;
+}
+
+.screen_active {
+  display: block;
 }
