@@ -26,19 +26,20 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: -webkit-linear-gradient(45deg, rgb(255, 255, 255), rgb(119, 221, 119));
-  background: -moz-linear-gradient(45deg, rgb(255, 255, 255), rgb(119, 221, 119));
-  background: linear-gradient(45deg, rgb(255, 255, 255), rgb(119, 221, 119));
+  background: -webkit-linear-gradient(45deg, rgb(255, 255, 255), rgb(46, 46, 208));
+  background: -moz-linear-gradient(45deg, rgb(255, 255, 255), rgb(46, 46, 208));
+  background: linear-gradient(45deg, rgb(255, 255, 255), rgb(46, 46, 208));
 }
 
 .cells {
+  width: 100%;
   margin-bottom: 30px;
   display: grid;
-  grid-template-columns: repeat(3, 60px);
+  grid-template-columns: repeat(3, 80px);
 }
 
 .cells-header {
-  border: 1px solid #77DD77;
+  border: 1px solid #9494df;
   border-radius: 10px;
   padding: 50px;
   display: flex;
@@ -48,7 +49,7 @@ button {
 }
 
 .cells__title {
-font-family: "Great Vibes", cursive;
+  font-family: "Great Vibes", cursive;
   font-weight: 400;
   font-style: normal;
   text-align: center;
@@ -63,8 +64,8 @@ font-family: "Great Vibes", cursive;
 
 .cell {
   cursor: pointer;
-  width: 60px;
-  height: 60px;
+  width: 80px;
+  height: 80px;
   border: 1px solid #000;
 }
 
@@ -126,22 +127,24 @@ font-family: "Great Vibes", cursive;
   border-radius: 10px;
   background-color: #fff;
   transition: all .3s;
-  border: 1px solid #77DD77;
+  border: 1px solid #9494df;
   padding: 10px 0;
   text-transform: uppercase;
 }
 
 .btn-reset {
   border-radius: 10px;
-  background-color: #fff;
+  background-color: #e31313;
   transition: all .3s;
-  border: 1px solid #e31313;
+  border: none;
+  color: #fff;
+  /* border: 1px solid #e31313; */
   padding: 10px;
   text-transform: uppercase;
 }
 
 .btn:hover {
-  background-color: #77DD77;
+  background-color: #9494df;
   color: #fff;
 }
 
@@ -155,4 +158,14 @@ font-family: "Great Vibes", cursive;
 
 .screen_active {
   display: block;
+}
+
+.screen-2_active {
+  border: 1px solid #9494df;
+  border-radius: 10px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  width: 350px;
 }

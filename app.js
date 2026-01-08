@@ -1,4 +1,5 @@
-const cells = document.querySelectorAll('.cell');
+const cellsCollection = document.querySelectorAll('.cell');
+const cellsParent = document.querySelector('.cells');
 const cellsHeader = document.querySelector('.cells-header');
 const secondScreen = document.querySelector('.screen-2');
 const btn = document.getElementById('cells-header__btn');
@@ -6,8 +7,10 @@ const btnReset = document.getElementById('btn-reset');
 let clickCounter = 0;
 let selectChange = document.querySelectorAll('input[name="change"]');
 
-cells.forEach(function(item) {
-  item.addEventListener('click', function(e) {
+
+// меняем класс клеток для отображения крестика или нолика
+cellsCollection.forEach(function(item) {
+  item.addEventListener('click', (e)=> {
     clickCounter++;
     if(selectChange=='round') {
       if(clickCounter%2==1) {
@@ -26,17 +29,41 @@ cells.forEach(function(item) {
         e.target.style.pointerEvents = 'none';
       }
     }
-    
-    if(clickCounter <= 9) {
-      console.log(clickCounter);
+
+    // условие победы крестика или нолика
+    function checkWin(cellsParent_1, cellsParent_2, cellsParent_3, cellClass) {
+      if(cellsParent_1.classList.contains(cellClass) && cellsParent_2.classList.contains(cellClass) && cellsParent_3.classList.contains(cellClass)) {
+        alert(`Победили ${cellClass}`)
+      }
     }
+
+    checkWin(cellsParent.children[0], cellsParent.children[1], cellsParent.children[2], 'round')
+    checkWin(cellsParent.children[0], cellsParent.children[4], cellsParent.children[8], 'round')
+    checkWin(cellsParent.children[0], cellsParent.children[3], cellsParent.children[6], 'round')
+    checkWin(cellsParent.children[1], cellsParent.children[4], cellsParent.children[7], 'round')
+    checkWin(cellsParent.children[2], cellsParent.children[5], cellsParent.children[8], 'round')
+    checkWin(cellsParent.children[3], cellsParent.children[4], cellsParent.children[5], 'round')
+    checkWin(cellsParent.children[6], cellsParent.children[7], cellsParent.children[8], 'round')
+    checkWin(cellsParent.children[2], cellsParent.children[4], cellsParent.children[6], 'round')
+
+    checkWin(cellsParent.children[0], cellsParent.children[1], cellsParent.children[2], 'cross')
+    checkWin(cellsParent.children[0], cellsParent.children[4], cellsParent.children[8], 'cross')
+    checkWin(cellsParent.children[0], cellsParent.children[3], cellsParent.children[6], 'cross')
+    checkWin(cellsParent.children[1], cellsParent.children[4], cellsParent.children[7], 'cross')
+    checkWin(cellsParent.children[2], cellsParent.children[5], cellsParent.children[8], 'cross')
+    checkWin(cellsParent.children[3], cellsParent.children[4], cellsParent.children[5], 'cross')
+    checkWin(cellsParent.children[6], cellsParent.children[7], cellsParent.children[8], 'cross')
+    checkWin(cellsParent.children[2], cellsParent.children[4], cellsParent.children[6], 'cross')
   })
 })
 
+// ставим выбор кнопки radiobutton по умолчанию при загрузке страницы
 document.addEventListener('DOMContentLoaded', function() {
   selectChange = 'round';
 })
 
+
+// выбираем кем начнем играть
 selectChange.forEach((radio) => {
   radio.addEventListener('change', function() {
     if (this.checked) {
@@ -45,24 +72,25 @@ selectChange.forEach((radio) => {
   });
 });
 
+// переход к игре
 btn.addEventListener('click', function(e) {
   e.preventDefault();
-  secondScreen.classList.add('screen_active');
-  
+
+  secondScreen.classList.add('screen-2_active');
   cellsHeader.classList.add('hide');
-  console.log(selectChange);
 })
 
+// кнопка сброса для игры сначала
 btnReset.addEventListener('click', function(e) {
   e.preventDefault();
 
-  secondScreen.classList.remove('screen_active');
+  secondScreen.classList.remove('screen-2_active');
   clickCounter = 0;
-  cells.forEach(function(cell) {
+  cellsCollection.forEach(function(cell) {
     cell.classList.remove('round');
     cell.classList.remove('cross');
     cell.style.pointerEvents = 'auto';
   })
-  
+
   cellsHeader.classList.remove('hide');
 })
