@@ -2,6 +2,8 @@ const cellsCollection = document.querySelectorAll('.cell');
 const cellsParent = document.querySelector('.cells');
 const cellsHeader = document.querySelector('.cells-header');
 const secondScreen = document.querySelector('.screen-2');
+const thirdScreen = document.querySelector('.screen-3');
+
 const btn = document.getElementById('cells-header__btn');
 const btnReset = document.getElementById('btn-reset');
 let clickCounter = 0;
@@ -34,6 +36,9 @@ cellsCollection.forEach(function(item) {
     function checkWin(cellsParent_1, cellsParent_2, cellsParent_3, cellClass) {
       if(cellsParent_1.classList.contains(cellClass) && cellsParent_2.classList.contains(cellClass) && cellsParent_3.classList.contains(cellClass)) {
         alert(`Победили ${cellClass}`)
+        secondScreen.classList.remove('screen-2_active');
+        // thirdScreen.style.display = 'block';
+        thirdScreen.classList.add('screen-3_active')
       }
     }
 

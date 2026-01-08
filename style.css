@@ -138,7 +138,6 @@ button {
   transition: all .3s;
   border: none;
   color: #fff;
-  /* border: 1px solid #e31313; */
   padding: 10px;
   text-transform: uppercase;
 }
@@ -154,6 +153,20 @@ button {
 
 .screen-3 {
   display: none;
+}
+
+.screen-3_active {
+  border: 1px solid #9494df;
+  border-radius: 10px;
+  /* padding: 50px; */
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  width: 350px;
+}
+
+.diplom {
+  width: 100%;
 }
 
 .screen_active {
