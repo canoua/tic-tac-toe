@@ -8,7 +8,6 @@ const btnReset = document.getElementById('btn-reset');
 let clickCounter = 0;
 let selectChange = document.querySelectorAll('input[name="change"]');
 
-
 // меняем класс клеток для отображения крестика или нолика
 cellsCollection.forEach(function(item) {
   item.addEventListener('click', (e)=> {
@@ -34,11 +33,16 @@ cellsCollection.forEach(function(item) {
     // условие победы крестика или нолика
     function checkWin(cellsParent_1, cellsParent_2, cellsParent_3, cellClass) {
       if(cellsParent_1.classList.contains(cellClass) && cellsParent_2.classList.contains(cellClass) && cellsParent_3.classList.contains(cellClass)) {
+        btnReset.style.display = 'none';
+        cellsParent_1.style.border = '4px solid yellow';
+        cellsParent_2.style.border = '4px solid yellow';
+        cellsParent_3.style.border = '4px solid yellow';
+        
         setTimeout(() => {
           secondScreen.classList.remove('screen-2_active');
           secondScreen.style.height = '0';
           secondScreen.style.width = '0';
-        }, 1000)
+        }, 2500)
        
         setTimeout(() => {
           const resultOutput = document.querySelector('.screen-3__output');
@@ -49,7 +53,7 @@ cellsCollection.forEach(function(item) {
           }
           
           thirdScreen.classList.add('screen-3_active')
-        }, 2000);
+        }, 4000);
         
       }
     }

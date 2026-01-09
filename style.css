@@ -1,6 +1,4 @@
-*, 
-li, 
-ul {
+*, li, ul {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -75,7 +73,6 @@ button {
   content: 'o';
   position: absolute;
   font-size: 30px;
-  /* color: #000; */
   color: #23e123;
   left: 50%;
   top: 50%;
@@ -146,8 +143,6 @@ button {
   color: #fff;
 }
 
-
-
 .screen-3 {
   opacity: 0;
   width: 0;
@@ -181,23 +176,17 @@ button {
 }
 
 .screen-2 {
-  opacity: 0;
-  width: 0;
-  height: 0;
-  transition: all .5s;
-  /* display: none; */
+  display: none;
 }
 
 .screen-2_active {
   border: 1px solid #9494df;
   border-radius: 10px;
-  opacity: 1;
   padding: 50px;
   display: flex;
   flex-direction: column;
   background-color: #fff;
   width: 350px;
-  height: auto;
 }
 
 .text_green {
