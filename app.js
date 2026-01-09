@@ -53,7 +53,7 @@ cellsCollection.forEach(function(item) {
           }
           
           thirdScreen.classList.add('screen-3_active')
-        }, 4000);
+        }, 3000);
         
       }
     }
