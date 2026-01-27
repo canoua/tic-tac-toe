@@ -1,7 +1,7 @@
 function ResultPage() {
   return (
     <>
-      {/* <div>ResultPage</div> */}
+      <div>ResultPage</div>
     </>
   )
 }

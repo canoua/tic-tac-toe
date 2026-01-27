@@ -1,5 +1,7 @@
 import './HomePages.css'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+
 
 function HomePage() {
   //option1 ставим по умолчанию
@@ -8,6 +10,13 @@ function HomePage() {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setRadio(event.target.value);
   };
+
+  const navigate = useNavigate();
+
+  function toGamePage(e: React.ChangeEvent<HTMLInputElement>) {
+    e.preventDefault();
+    navigate('/game')
+  }
   
   return (
     <>
@@ -39,8 +48,17 @@ function HomePage() {
               />
             </div>
           </div>
-
-          <button className="btn" type="submit" id="cells-header__btn">играть</button>
+          <nav>
+            {/* <Link to="/">играть</Link>  */}
+            {/* <Link to="/about">О проекте</Link> */}
+          </nav>
+          {/* <Routes> */}
+            {/* <Route path="/" element={<Game />} /> */}
+            {/* <Route path="/about" element={<About />} /> */}
+            {/* Этот маршрут сработает, если ничего не подошло */}
+            {/* <Route path="*" element={<NotFound />} /> */}
+          {/* </Routes> */}
+          <button onClick={toGamePage} className="btn" type="submit" id="cells-header__btn">играть</button>
         </form>
       </div>
     </>
